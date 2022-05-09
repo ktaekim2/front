@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input 태그를 블록요소로 지정 */
+        input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    아이디: <input type="text" id="username"><br>
+    <!--버튼을 클릭했을 때 fun1이라는 함수 호출-->
+    <button onclick="fun1()">아이디입력완료</button><br>
+    비밀번호: <input type="password" id="password">
+    비밀번호입력값확인: <input type="text" id="password-check">
+    <button onclick="fun2()">비밀번호체크</button>
+    <!-- 위 버튼 클릭시 fun2 함수를 호출하고
+    비밀번호 입력값확인 칸에 비밀번호에서 입력한 값을 출력하기-->
+</body>
+<script>
+    // fun1() 함수 선언
+    function fun1() {
+        console.log("fun1 호출됨")
+        // 아이디에 입력한 값을 가져오기
+        console.log(document.getElementById("username").value);
+        // 태그 자체를 변수에 값으로 집어넣음
+        const usernameTag = document.getElementById("username");
+        console.log(usernameTag);
+        // 태그의 value를 변수 선언
+        const usernameTagValue = document.getElementById("username").value;
+        console.log(usernameTagValue);
+        console.log(usernameTag.value);
+    }
+    // fun2() 함수 선언
+    function fun2() {
+        const passwordValue = document.getElementById("password").value;
+        console.log(`비밀번호 입력값: ${passwordValue}`)
+
+        let passwordCheck = document.getElementById("password-check");
+        passwordCheck.value = passwordValue;
+
+        document.getElementById("password-check").value = passwordValue;
+
+    }
+    // 통째로 가져와서 필요한 것만 가져다 쓸 수 있다.
+    console.log(document);
+    // id=username인 요소를 js로 가져옴
+    console.log(document.getElementById("username"));
+    // value값을 출력
+    console.log(document.getElementById("username").value);
+    // querySelector(): 태그
+    console.log(document.querySelector("input"));
+    console.log(document.querySelectorAll("input"));
+    // querySelector(): 특정아이디
+    console.log(document.querySelector("#username"));
+</script>
+
+</html>
