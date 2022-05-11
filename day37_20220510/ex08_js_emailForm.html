@@ -12,8 +12,8 @@
 
 <body>
     <input type="text" id="email1" onblur="emailCheck()" placeholder="email">@
-    <input type="text" id="email2" onblur="emailCheck()" placeholder="email">
-    <select name="emailSelect" id="emailSelect" onchange="emailSelect()">
+    <input type="text" id="email2" onblur="emailCheck()">
+    <select name="" id="emailSelect" onchange="emailSelect()">
         <option value="">직접입력</option>
         <option value="gmail.com">gmail.com</option>
         <option value="naver.com">naver.com</option>
@@ -25,6 +25,9 @@
 <script>
     function emailSelect() {
         console.log("함수호출")
+        const emailSelect2 = document.getElementById("emailSelect");
+        console.log(`선택한메일: ${emailSelect2}`);
+        // value속성이 있는 tag는 value에 주의
         const emailSelect = document.getElementById("emailSelect").value;
         console.log(`선택한메일: ${emailSelect}`);
         document.getElementById("email2").value = emailSelect;

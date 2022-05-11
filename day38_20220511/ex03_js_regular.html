@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 정규식표현(Regular Expression) -->
+    <!-- 1.영문소문자만 5~10글자 -->
+    <input type="text" id="id1" onblur="id1Check()"><br>
+    <!-- 2.영문소문자, 숫자 5~10글자 -->
+    <input type="text" id="id2" onblur="id2Check()"><br>
+    <!-- 3.영문소문자(필수), 숫자 5~10글자 -->
+    <input type="text" id="id3" onblur="id3Check()"><br>
+    <!-- 4.영문소문자(필수), 숫자(필수) 5~10글자 -->
+    <input type="text" id="id4" onblur="id4Check()"><br>
+    <!-- 5.영문소문자(필수), 숫자(필수), 영문대문자(필수) 5~10글자 -->
+    <input type="text" id="id5" onblur="id5Check()"><br>
+    <!-- 6.영문소문자(필수), 숫자(필수), 영문대문자(필수), 특수문자(필수, -_!#$) 5~10글자 -->
+    <input type="text" id="id6" onblur="id6Check()"><br>
+    <!-- 7.전화번호형식(000-0000-0000) -->
+    <input type="text" id="id7" onblur="id7Check()"><br>
+</body>
+<script>
+    function id1Check() {
+        const id1 = document.getElementById("id1").value;
+        const exp = /^[a-z]{5,10}$/;
+        if (id1.match(exp)) {
+            console.log("일치")
+        } else {
+            console.log("불일치")
+        }
+
+    }
+    function id2Check() {
+        const id2 = document.getElementById("id2").value;
+        const exp = /^[a-z\d]{5,10}$/; // and가 아니라 or
+        if (id2.match(exp)) {
+            console.log("일치")
+        } else {
+            console.log("불일치")
+        }
+
+    }
+    function id3Check() {
+        const id3 = document.getElementById("id3").value;
+        const exp = /^(?=.*[a-z])[a-z\d]{5,10}$/;
+        if (id3.match(exp)) {
+            console.log("일치")
+        } else {
+            console.log("불일치")
+        }
+
+    }
+    function id4Check() {
+        const id4 = document.getElementById("id4").value;
+        const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{5,10}$/;
+        if (id4.match(exp)) {
+            console.log("일치")
+        } else {
+            console.log("불일치")
+        }
+
+    }
+    function id5Check() {
+        const id5 = document.getElementById("id5").value;
+        const exp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{5,10}$/;
+        if (id5.match(exp)) {
+            console.log("일치")
+        } else {
+            console.log("불일치")
+        }
+
+    }
+    function id6Check() {
+        const id6 = document.getElementById("id6").value;
+        const exp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-_!#$])[A-Za-z\d-_!#$]{5,10}$/;
+        if (id6.match(exp)) {
+            console.log("일치")
+        } else {
+            console.log("불일치")
+        }
+
+    }
+    function id7Check() {
+        const id7 = document.getElementById("id7").value;
+        const exp = /^\d{3}-\d{4}-\d{4}$/;
+        if (id7.match(exp)) {
+            console.log("일치")
+        } else {
+            console.log("불일치")
+        }
+
+    }
+</script>
+
+</html>
