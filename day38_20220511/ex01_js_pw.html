@@ -11,7 +11,7 @@
 
 <body>
     <b>비밀번호</b><br>
-    <input type="text" id="pw" placeholder="비밀번호 8~16자 숫자, 영문소문자, 특수문자" onblur="pwCheck()"><i style="color: grey;" class="bi bi-file-lock2"></i><br>
+    <input type="text" id="pw" placeholder="비밀번호 8~16자 숫자, 영문소문자, 특수문자" onblur="pwCheck()"><br>
     <b>비밀번호 재확인</b><br>
     <input type="text" id="pwCheck" placeholder="비밀번호 한번 더" onblur="pwCheck()"><i style="color: grey;" class="bi bi-file-lock2" id="lock2"></i>
     <p id="check-result"></p>
@@ -35,8 +35,6 @@
             checkResult.style.color = "red";
         }
     }
-
-
 </script>
 
 </html>
