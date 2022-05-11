@@ -9,6 +9,7 @@
     <style>
         input {
             display: block;
+            /* 요소를 block요소처럼 표시(요소 앞뒤 줄바꿈) */
         }
     </style>
 </head>
@@ -16,19 +17,19 @@
 <body>
     <!-- 정규식표현(Regular Expression) -->
     <!-- 1.영문소문자만 5~10글자 -->
-    <input type="text" id="id1" onblur="id1Check()"><br>
+    <input type="text" id="id1" onblur="id1Check()">
     <!-- 2.영문소문자, 숫자 5~10글자 -->
-    <input type="text" id="id2" onblur="id2Check()"><br>
+    <input type="text" id="id2" onblur="id2Check()">
     <!-- 3.영문소문자(필수), 숫자 5~10글자 -->
-    <input type="text" id="id3" onblur="id3Check()"><br>
+    <input type="text" id="id3" onblur="id3Check()">
     <!-- 4.영문소문자(필수), 숫자(필수) 5~10글자 -->
-    <input type="text" id="id4" onblur="id4Check()"><br>
+    <input type="text" id="id4" onblur="id4Check()">
     <!-- 5.영문소문자(필수), 숫자(필수), 영문대문자(필수) 5~10글자 -->
-    <input type="text" id="id5" onblur="id5Check()"><br>
+    <input type="text" id="id5" onblur="id5Check()">
     <!-- 6.영문소문자(필수), 숫자(필수), 영문대문자(필수), 특수문자(필수, -_!#$) 5~10글자 -->
-    <input type="text" id="id6" onblur="id6Check()"><br>
+    <input type="text" id="id6" onblur="id6Check()">
     <!-- 7.전화번호형식(000-0000-0000) -->
-    <input type="text" id="id7" onblur="id7Check()"><br>
+    <input type="text" id="id7" onblur="id7Check()">
 </body>
 <script>
     function id1Check() {
@@ -39,7 +40,6 @@
         } else {
             console.log("불일치")
         }
-
     }
     function id2Check() {
         const id2 = document.getElementById("id2").value;
@@ -49,7 +49,6 @@
         } else {
             console.log("불일치")
         }
-
     }
     function id3Check() {
         const id3 = document.getElementById("id3").value;
@@ -59,7 +58,6 @@
         } else {
             console.log("불일치")
         }
-
     }
     function id4Check() {
         const id4 = document.getElementById("id4").value;
@@ -69,7 +67,6 @@
         } else {
             console.log("불일치")
         }
-
     }
     function id5Check() {
         const id5 = document.getElementById("id5").value;
@@ -79,7 +76,6 @@
         } else {
             console.log("불일치")
         }
-
     }
     function id6Check() {
         const id6 = document.getElementById("id6").value;
@@ -89,7 +85,6 @@
         } else {
             console.log("불일치")
         }
-
     }
     function id7Check() {
         const id7 = document.getElementById("id7").value;
@@ -99,7 +94,6 @@
         } else {
             console.log("불일치")
         }
-
     }
 </script>
 
